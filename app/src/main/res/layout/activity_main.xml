@@ -14,13 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
-        <com.season.winter.ui.textView.CBTextView
+<!--        <com.season.winter.ui.textView.CBTextView
             app:cb_text="select your locatoin...."
             app:cb_text_view_type="head_xs"
             android:gravity="center_vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"/>-->
 
         <ImageView
             android:src="@drawable/shopping_cart"
