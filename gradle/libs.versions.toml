@@ -1,7 +1,6 @@
 [versions]
 ## SDK
-compileSdk = "34"
-targetSdk = "34"
+compileSdk = "35"
 minSdk = "23"
 
 ## Release
@@ -11,105 +10,108 @@ hotfix = "0"
 versionCode = "1"
 
 ## GradlePlugins
-androidGradlePlugin = "8.1.4"
+# https://developer.android.com/build/releases/gradle-plugin
+androidGradlePlugin = "8.7.3"
 #https://github.com/google/secrets-gradle-plugin#secrets-gradle-plugin-for-android
 secretsGradlePlugin = "2.0.1"
 
-## Kotlin
+## Kotlin & Compose compiler
 # https://github.com/JetBrains/kotlin
 # https://kotlinlang.org/api/latest/jvm/stdlib/
-kotlin = "1.9.10"
+# https://d.android.com/r/studio-ui/compose-compiler
+kotlin = "2.1.0"
+
 # https://github.com/Kotlin/kotlinx.serialization
-kotlinSerializationJson = "1.6.0"
+kotlinSerializationJson = "1.7.3"
 
 ## Coroutine
 # https://github.com/Kotlin/kotlinx.coroutines
-coroutines = "1.7.3"
+coroutines = "1.10.1"
 # https://github.com/cashapp/turbine
 coroutines-turbine = "1.0.0"
 
 ## KSP
 # https://github.com/google/ksp
-ksp = "1.9.10-1.0.13"
+ksp = "2.1.0-1.0.29"
 
 ## Android
-android-material = "1.10.0"
+android-material = "1.12.0"
 
 ## AndroidX
 # https://developer.android.com/jetpack/androidx/releases/annotation
-androidx-annotation = "1.7.0"
+androidx-annotation = "1.9.1"
 # https://developer.android.com/jetpack/androidx/releases/core
-androidx-core = "1.12.0"
+androidx-core = "1.15.0"
 # https://developer.android.com/jetpack/androidx/releases/appcompat
-androidx-appCompat = "1.6.1"
+androidx-appCompat = "1.7.0"
 # https://developer.android.com/jetpack/androidx/releases/activity
-androidx-activity = "1.8.1"
+androidx-activity = "1.9.3"
 # https://developer.android.com/jetpack/androidx/releases/fragment
-androidx-fragment = "1.7.0-alpha07"
+androidx-fragment = "1.8.5"
 # https://developer.android.com/jetpack/androidx/releases/lifecycle
-androidx-lifecycle = "2.6.2"
+androidx-lifecycle = "2.8.7"
 # https://developer.android.com/jetpack/androidx/releases/recyclerview
 androidx-recyclerView = "1.3.2"
 # https://developer.android.com/jetpack/androidx/releases/constraintlayout
-androidx-constraintLayout = "2.1.4"
+androidx-constraintLayout = "2.2.0"
 # https://github.com/google/dagger/releases
-androidx-hilt = "2.48"
+androidx-hilt = "2.54"
 # https://developer.android.com/jetpack/androidx/releases/hilt
-androidx-hilt-compose = "1.1.0"
+androidx-hilt-compose = "1.2.0"
 # https://developer.android.com/jetpack/androidx/releases/room
 androidx-room = "2.6.1"
 # https://developer.android.com/jetpack/androidx/releases/navigation
-androidx-viewsNavigation = "2.7.6"
+androidx-viewsNavigation = "2.8.5"
 # https://developer.android.com/develop/ui/views/launch/splash-screen
 androidx-splashScreen = "1.0.1"
 # https://developer.android.com/jetpack/androidx/releases/work
-androidx-workerManager = "2.9.0" # Kotlin + coroutines
+androidx-workerManager = "2.10.0" # Kotlin + coroutines
 
 ## Compose
 # https://developer.android.com/jetpack/androidx/releases/compose
-compose = "1.6.0-beta03"
+compose = "1.7.6"
 # https://developer.android.com/jetpack/androidx/releases/compose-kotlin
 compose-compilerVersion = "1.5.3"
 # https://developer.android.com/jetpack/androidx/releases/compose-material
-compose-material = "1.5.4"
+compose-material = "1.7.6"
 # https://developer.android.com/jetpack/androidx/releases/compose-material3
-compose-material3 = "1.1.2"
+compose-material3 = "1.3.1"
 # https://developer.android.com/jetpack/androidx/releases/navigation
-compose-navigation = "2.7.6"
+compose-navigation = "2.8.5"
 
 ## Compose & Google
 # https://github.com/googlemaps/android-maps-compose#maps-compose-
 compose-google-maps = "3.1.1"
 
 ## Google
-google-services-gms = "4.3.15"
+google-services-gms = "4.4.2"
 
 ## Network
 # https://square.github.io/okhttp/
 network-okhttp = "4.12.0"
 # https://github.com/square/retrofit
-network-retrofit = "2.9.0"
-gson = "2.10.1"
+network-retrofit = "2.11.0"
+gson = "2.11.0"
 # https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter
 network-retrofit-kotlinxSerializationConvert = "1.0.0"
 
 ## Test
 # https://developer.android.com/jetpack/androidx/releases/test
-test-androidx-core = "1.6.0-alpha04"
-test-androidx-runner = "1.6.0-alpha05"
-test-androidx-junit = "1.2.0-alpha02"
+test-androidx-core = "1.6.1"
+test-androidx-runner = "1.6.2"
+test-androidx-junit = "1.2.1"
 # https://github.com/square/okhttp/tree/master/mockwebserver
 test-mock-webserver = "4.12.0"
 # https://github.com/mockito/mockito
 test-mockito = "5.5.0"
 # https://github.com/mockito/mockito-kotlin
 test-mockito-kotlin = "5.1.0"
-junit5 = "5.9.3"
+junit5 = "5.10.2"
 junit = "4.13.2"
-espresso-core = "3.5.1"
+espresso-core = "3.6.1"
 
 ## Firebase
-firebaseBom = "32.7.0"
+firebaseBom = "33.7.0"
 
 ## Third party
 # https://github.com/taehwandev/ComposeKeyboardState
@@ -117,8 +119,8 @@ compose-keyboardState = "1.6.0-alpha06"
 #compose-keyboardState = "1.5.0"
 
 # https://github.com/bumptech/glide
-glideAnnotationProcessor = "4.12.0"
-glide = "4.15.1"
+glideAnnotationProcessor = "4.16.0"
+glide = "4.16.0"
 
 [libraries]
 
@@ -165,6 +167,7 @@ compose-navigation = { module = "androidx.navigation:navigation-compose", versio
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose-material" }
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
 compose-activity = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+compose-compilerGradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 
 ## Network
 network-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "network-okhttp" }
@@ -221,6 +224,4 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 googleServicesGms = { id = "com.google.gms.google-services", version.ref = "google-services-gms" }
-
-
-[bundles]
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

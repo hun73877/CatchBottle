@@ -1,4 +1,4 @@
-import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+//import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 
 plugins {
     alias(libs.plugins.androidApp)
@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.googleServicesGms)
+    alias(libs.plugins.composeCompiler)
 }
 
 android {
@@ -16,7 +17,6 @@ android {
     defaultConfig {
         applicationId = "com.season.winter.catchbottle"
         minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = libs.versions.versionCode.get().toInt()
         versionName = "${libs.versions.major.get()}.${libs.versions.minor.get()}.${libs.versions.hotfix.get()}"
 
@@ -52,9 +52,6 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.compose.compilerVersion.get()
-    }
-    dataBinding {
-        enable = true
     }
     packaging {
         resources {
@@ -124,6 +121,8 @@ dependencies {
     implementation(libs.androidx.lifecycleRuntimeCompose)
     implementation(libs.androidx.hilt.navigation.compose)
 
+    compileOnly(libs.compose.compilerGradlePlugin)
+
     debugRuntimeOnly(libs.compose.uiTooling)
 
     implementation(platform(libs.firebase.bom))
@@ -152,6 +151,6 @@ dependencies {
 
 }
 
-fun getApiKey(property: String): String {
-    return gradleLocalProperties(rootDir).getProperty(property) ?: ""
-}
+//fun getApiKey(property: String): String {
+//    return gradleLocalProperties(rootDir).getProperty(property) ?: ""
+//}
