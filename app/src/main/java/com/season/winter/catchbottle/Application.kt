@@ -6,12 +6,7 @@ import androidx.work.Configuration
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class Application: Application(), Configuration.Provider {
-
-    override val workManagerConfiguration: Configuration
-        get() = Configuration
-            .Builder()
-            .build()
+class Application: Application() {
 
     override fun onCreate() {
         super.onCreate()

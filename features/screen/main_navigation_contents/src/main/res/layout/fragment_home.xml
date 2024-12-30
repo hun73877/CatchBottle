@@ -1,39 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-
-        <import type="androidx.recyclerview.widget.LinearLayoutManager" />
-        <import type="androidx.recyclerview.widget.RecyclerView.LayoutManager" />
-        <import type="com.season.winter.main_navigation_contents.fragments.navigation.home.recyclerView.adapter.HomeRecyclerViewAdapter" />
-
-        <variable
-            name="adapter"
-            type="HomeRecyclerViewAdapter"/>
-
-        <variable
-            name="layoutManager"
-            type="LayoutManager" />
-
-    </data>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
 <!--            tools:listitem="@layout/item_liquor_grouping"-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_weight="1"
-            app:layoutManager="@{layoutManager}"
-            app:adapter="@{adapter}"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_weight="1"
+        app:layoutManager="@{layoutManager}"
+        app:adapter="@{adapter}"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
 
-    </LinearLayout>
-
-</layout>
+</LinearLayout>

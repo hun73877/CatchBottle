@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CBTextView">
+        <attr name="cb_text" format="string" />
+        <attr name="cb_text_color" format="reference|color" />
+        <attr name="cb_text_view_type">
+            <enum name="head_xs"   value="0" />
+            <enum name="head_s"    value="1" />
+            <enum name="head_m"    value="2" />
+            <enum name="head_l"    value="3" />
+            <enum name="body_s"    value="4" />
+            <enum name="body_m"    value="5" />
+            <enum name="body_l"    value="6" />
+            <enum name="caption_s" value="7" />
+            <enum name="caption_m" value="8" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CBEditText">
+        <attr name="cb_input_use_delete_button" format="boolean" />
+        <attr name="cb_edit_text_type">
+            <enum name="first" value="0" />
+            <enum name="ghost" value="1" />
+            <enum name="search" value="2" />
+        </attr>
+    </declare-styleable>
+
+</resources>

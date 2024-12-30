@@ -1,6 +1,5 @@
-import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+//import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidApp)
     alias(libs.plugins.kotlinAndroid)
@@ -8,6 +7,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.googleServicesGms)
+    alias(libs.plugins.composeCompiler)
 }
 
 android {
@@ -17,7 +17,6 @@ android {
     defaultConfig {
         applicationId = "com.season.winter.catchbottle"
         minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = libs.versions.versionCode.get().toInt()
         versionName = "${libs.versions.major.get()}.${libs.versions.minor.get()}.${libs.versions.hotfix.get()}"
 
@@ -41,7 +40,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = "17"
     }
     tasks.withType<Test> {
         useJUnitPlatform()
@@ -49,12 +48,10 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.compose.compilerVersion.get()
-    }
-    dataBinding {
-        enable = true
     }
     packaging {
         resources {
@@ -65,21 +62,21 @@ android {
 
 dependencies {
 
-    implementation(project(":core:common"))
-    implementation(project(":core:design:core_design_resource"))
-    implementation(project(":core:design:designsystem"))
-    implementation(project(":core:design:compose"))
-    implementation(project(":core:design:ui"))
-    implementation(project(":core:data:model:user"))
-    implementation(project(":core:data:model:liquor"))
-    implementation(project(":core:data:repository"))
-    implementation(project(":core:domain"))
-    implementation(project(":core:network:firebase:firestore"))
-    implementation(project(":core:network:firebase:storage"))
-    implementation(project(":core:network:firebase:remoteconfig"))
-    implementation(project(":features:screen:main_navigation_contents"))
-    implementation(project(":features:screen:login"))
-    implementation(project(":features:screen:main"))
+//    implementation(project(":core:common"))
+//    implementation(project(":core:design:core_design_resource"))
+//    implementation(project(":core:design:designsystem"))
+//    implementation(project(":core:design:compose"))
+//    implementation(project(":core:design:ui"))
+//    implementation(project(":core:data:model:user"))
+//    implementation(project(":core:data:model:liquor"))
+//    implementation(project(":core:data:repository"))
+//    implementation(project(":core:domain"))
+//    implementation(project(":core:network:firebase:firestore"))
+//    implementation(project(":core:network:firebase:storage"))
+//    implementation(project(":core:network:firebase:remoteconfig"))
+////    implementation(project(":features:screen:main_navigation_contents"))
+//    implementation(project(":features:screen:login"))
+//    implementation(project(":features:screen:main"))
 
     implementation(libs.kotlin)
     implementation(libs.kotlin.serializationJson)
@@ -124,6 +121,8 @@ dependencies {
     implementation(libs.androidx.lifecycleRuntimeCompose)
     implementation(libs.androidx.hilt.navigation.compose)
 
+    compileOnly(libs.compose.compilerGradlePlugin)
+
     debugRuntimeOnly(libs.compose.uiTooling)
 
     implementation(platform(libs.firebase.bom))
@@ -152,115 +151,6 @@ dependencies {
 
 }
 
-fun getApiKey(property: String): String {
-    return gradleLocalProperties(rootDir).getProperty(property) ?: ""
-}
-
-
-
-/*
-plugins {
-    alias libs.plugins.android.application
-    alias libs.plugins.kotlin.android
-    alias libs.plugins.kotlin.kapt
-    alias libs.plugins.devtools.ksp
-    alias libs.plugins.dagger.hilt
-    alias libs.plugins.kotlin.plugin.serialization
-    alias libs.plugins.gms.google.services
-}
-
-android {
-    namespace 'com.season.winter.catchbottle'
-    compileSdk libs.versions.compileSdk.get().toInteger()
-
-    defaultConfig {
-        applicationId "com.season.winter.catchbottle"
-        minSdk libs.versions.minSdk.get().toInteger()
-        targetSdk libs.versions.targetSdk.get().toInteger()
-        versionCode libs.versions.versionCode.get().toInteger()
-        versionName libs.versions.versionName.get()
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-    dataBinding {
-        enabled = true
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()
-    }
-}
-
-
-dependencies {
-
-    implementation project(":core:common")
-
-    implementation project(":core:design:core_design_resource")
-    implementation project(":core:design:designsystem")
-    implementation project(":core:design:compose")
-    implementation project(":core:design:ui")
-
-    implementation project(":core:data:model:user")
-    implementation project(":core:data:model:liquor")
-    implementation project(":core:data:repository")
-
-    implementation project(":core:domain")
-
-    implementation project(":core:network:firebase:firestore")
-    implementation project(":core:network:firebase:storage")
-    implementation project(":core:network:firebase:remoteconfig")
-
-    implementation project(":features:screen:main_navigation_contents")
-    implementation project(":features:screen:login")
-    implementation project(":features:screen:main")
-
-    implementation libs.bundles.default
-    implementation libs.bundles.default.screen
-    testImplementation libs.bundles.default.test.implementation
-    androidTestImplementation libs.bundles.default.test.androidTestImplementation
-
-    implementation libs.bundles.kotlinx.serialization
-
-    implementation libs.bundles.navigation
-
-    implementation platform(libs.com.google.firebase.bom)
-    implementation libs.bundles.firebase
-
-    implementation libs.bundles.hilt
-    kapt libs.bundles.hilt.compiler.kapt
-
-    ksp libs.bundles.room.compiler.ksp
-    annotationProcessor libs.bundles.room.compiler.annotationProcessor
-    testImplementation libs.bundles.room.testing.testImplementation
-    implementation libs.bundles.room
-
-    annotationProcessor libs.bundles.glide.compiler.annotationProcessor
-    implementation libs.bundles.glide
-
-    implementation libs.bundles.workmanager.all
-
-    implementation libs.bundles.compose.all
-
-}
-
-kapt {
-    correctErrorTypes true
-}
-*/
+//fun getApiKey(property: String): String {
+//    return gradleLocalProperties(rootDir).getProperty(property) ?: ""
+//}

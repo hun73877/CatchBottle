@@ -1,18 +1,21 @@
-package com.season.winter.catchbottle.activity.search
-
-import com.season.winter.catchbottle.R
-import com.season.winter.catchbottle.databinding.ActivitySearchBinding
-import com.season.winter.common.activity.BaseActivity
-import dagger.hilt.android.AndroidEntryPoint
-
-@AndroidEntryPoint
-class SearchActivity: BaseActivity<ActivitySearchBinding>(R.layout.activity_search) {
-
-    override fun ActivitySearchBinding.initView() {
-        activity = this@SearchActivity
-    }
-
-    fun onClickCloseButton() {
-        finish()
-    }
-}
+//package com.season.winter.catchbottle.activity.search
+//
+//import android.os.Bundle
+//import androidx.appcompat.app.AppCompatActivity
+//import com.season.winter.catchbottle.databinding.ActivitySearchBinding
+//import dagger.hilt.android.AndroidEntryPoint
+//
+//@AndroidEntryPoint
+//class SearchActivity: AppCompatActivity() {
+//
+//    lateinit var binding: ActivitySearchBinding
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        binding = ActivitySearchBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//        binding.backButton.setOnClickListener {
+//            finish()
+//        }
+//    }
+//}

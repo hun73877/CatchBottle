@@ -1,30 +1,36 @@
-package com.season.winter.catchbottle.activity.login
-
-import com.season.winter.catchbottle.R
-import com.season.winter.catchbottle.databinding.ActivityLoginBinding
-import com.season.winter.common.activity.BaseActivity
-import dagger.hilt.android.AndroidEntryPoint
-import androidx.activity.viewModels
-import com.season.winter.catchbottle.activity.main.MainActivity
-import com.season.winter.common.extention.activity.cbStartActivity
-import com.season.winter.common.extention.coroutine.repeatOnLifecycle
-import com.season.winter.feature.login.LoginViewModel
-
-@AndroidEntryPoint
-class LoginActivity: BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
-
-    private val viewModel: LoginViewModel by viewModels()
-
-    override fun ActivityLoginBinding.initView() {
-        repeatOnLifecycle(viewModel.onSavedUserNameFlow) { isSaved ->
-            if(isSaved)
-                cbStartActivity(MainActivity::class.java, true)
-        }
-        loginButton.setOnClickListener {
-            nameEditText.text.toString().run {
-                if (isNotEmpty())
-                    viewModel.login(this)
-            }
-        }
-    }
-}
+//package com.season.winter.catchbottle.activity.login
+//
+//import android.os.Bundle
+//import androidx.activity.viewModels
+//import androidx.appcompat.app.AppCompatActivity
+//import com.season.winter.catchbottle.activity.main.MainActivity
+//import com.season.winter.catchbottle.databinding.ActivityLoginBinding
+//import com.season.winter.common.extention.activity.cbStartActivity
+//import com.season.winter.common.extention.coroutine.repeatOnLifecycle
+//import com.season.winter.feature.login.LoginViewModel
+//import dagger.hilt.android.AndroidEntryPoint
+//
+//@AndroidEntryPoint
+//class LoginActivity: AppCompatActivity() {
+//
+//    private val viewModel: LoginViewModel by viewModels()
+//
+//    lateinit var binding: ActivityLoginBinding
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        binding = ActivityLoginBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//
+//        repeatOnLifecycle(viewModel.onSavedUserNameFlow) { isSaved ->
+//            if(isSaved)
+//                cbStartActivity(MainActivity::class.java, true)
+//        }
+//        binding.loginButton.setOnClickListener {
+//            binding.nameEditText.text.toString().run {
+//                if (isNotEmpty())
+//                    viewModel.login(this)
+//            }
+//        }
+//    }
+//}
