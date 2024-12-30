@@ -1,34 +1,29 @@
 package com.season.winter.catchbottle.activity.main
 
-import com.season.winter.catchbottle.R
+import android.os.Bundle
+import android.os.PersistableBundle
+import androidx.appcompat.app.AppCompatActivity
 import com.season.winter.catchbottle.databinding.ActivityMainBinding
-import com.season.winter.common.activity.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity: BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+class MainActivity: AppCompatActivity() {
 
-//    private val viewModel: MainNavigationViewModel by viewModels()
+    lateinit var binding: ActivityMainBinding
 
-    override fun ActivityMainBinding.initView() {
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 //        repeatOnLifecycle(viewModel.onLogoutListener) {
 //            if (it) {
 //                cbStartActivity(LoginActivity::class.java, true)
 //            }
 //        }
-//        repeatOnLifecycle(viewModel.onClickSearchListener) {
-//            if (it) {
-//                cbStartActivity(SearchActivity::class.java, false)
-//            }
-//        }
-//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_host) as NavHostFragment
-//        val navController = navHostFragment.findNavController()
-//        bottomNavigation.setupWithNavController(navController)
     }
 
     companion object {
 
         private const val TAG = "MainActivity"
     }
-
 }
