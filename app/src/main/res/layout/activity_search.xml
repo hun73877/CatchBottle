@@ -38,7 +38,6 @@
                 android:layout_weight="1"
                 android:singleLine="true"
                 app:cb_edit_text_type="search"
-                android:hint="@string/상품명을_검색해주세요"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
                 <requestFocus />

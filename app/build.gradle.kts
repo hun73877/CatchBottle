@@ -77,7 +77,7 @@ dependencies {
     implementation(project(":core:network:firebase:firestore"))
     implementation(project(":core:network:firebase:storage"))
     implementation(project(":core:network:firebase:remoteconfig"))
-    implementation(project(":features:screen:main_navigation_contents"))
+//    implementation(project(":features:screen:main_navigation_contents"))
     implementation(project(":features:screen:login"))
     implementation(project(":features:screen:main"))
 

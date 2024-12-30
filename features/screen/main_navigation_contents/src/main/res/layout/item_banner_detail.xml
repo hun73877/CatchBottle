@@ -7,13 +7,13 @@
         <import type="com.season.winter.liquor.liquorInfo.LiquorInfo" />
         <import type="com.season.winter.ui.model.fragment.home.BannerData" />
 
-        <variable
-            name="liquor_info"
-            type="LiquorInfo"/>
+<!--        <variable-->
+<!--            name="liquor_info"-->
+<!--            type="LiquorInfo"/>-->
 
-        <variable
-            name="banner_data"
-            type="BannerData"/>
+<!--        <variable-->
+<!--            name="banner_data"-->
+<!--            type="BannerData"/>-->
 
     </data>
 
@@ -24,7 +24,6 @@
 
         <ImageView
             android:id="@+id/iv_thumb"
-            app:imageFromUrlWrapHeight="@{banner_data.imageUrl}"
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:contentDescription="asd" />

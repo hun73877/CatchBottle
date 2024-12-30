@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.androidHilt)
-    alias(libs.plugins.ksp)
+//    alias(libs.plugins.ksp)
     alias(libs.plugins.kapt)
 }
 
@@ -77,7 +77,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
 
     implementation(libs.androidx.hilt.android)
-    ksp(libs.androidx.hilt.android.compiler)
+    kapt(libs.androidx.hilt.android.compiler)
 
     annotationProcessor(libs.glideAnnotationProcessor)
     implementation(libs.glide)
