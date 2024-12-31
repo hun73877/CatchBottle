@@ -1,4 +1,4 @@
-import dev.love.winter.catchbottle.buildlogic.configureAndroid
+import dev.love.winter.catchbottle.buildlogic.configureKotlinAndroid
 import dev.love.winter.catchbottle.buildlogic.configureAndroidTest
 import dev.love.winter.catchbottle.buildlogic.configureCoroutineAndroid
 import dev.love.winter.catchbottle.buildlogic.configureFlavor
@@ -9,7 +9,7 @@ plugins {
     id("com.android.application")
 }
 
-configureAndroid()
+configureKotlinAndroid()
 configureCoroutineAndroid()
 configureHiltAndroid()
 configureFlavor()

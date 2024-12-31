@@ -14,7 +14,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  * Configure android
  * https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/com/google/samples/apps/nowinandroid/KotlinAndroid.kt
  */
-internal fun Project.configureAndroid() {
+internal fun Project.configureKotlinAndroid() {
 
     with(pluginManager) {
         apply("org.jetbrains.kotlin.android")
@@ -57,6 +57,6 @@ internal fun Project.configureKotlin() {
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
-        target.configureAndroid()
+        target.configureKotlinAndroid()
     }
 }

@@ -1,5 +1,5 @@
 plugins {
-    id("catchbottle.application")
+    id("layer.application")
     id("catchbottle.compose")
     id("catchbottle.retrofit")
     id("catchbottle.firebase")
