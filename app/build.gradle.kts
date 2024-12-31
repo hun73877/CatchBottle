@@ -11,11 +11,11 @@ plugins {
 }
 
 android {
-    namespace = "com.season.winter.catchbottle"
+    namespace = "dev.love.winter.catchbottle"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.season.winter.catchbottle"
+        applicationId = "dev.love.winter.catchbottle"
         minSdk = libs.versions.minSdk.get().toInt()
         versionCode = libs.versions.versionCode.get().toInt()
         versionName = "${libs.versions.major.get()}.${libs.versions.minor.get()}.${libs.versions.hotfix.get()}"
@@ -137,18 +137,15 @@ dependencies {
     implementation(libs.test.mockito.kotlin)
     implementation(libs.test.mockWebserver)
 
-    libs.test.run {
-        testImplementation(androidx.core)
-        testImplementation(androidx.runner)
-        testImplementation(libs.junit)
-        testImplementation(junit5)
-        testImplementation(junit5.engine)
-        testImplementation(mockito.kotlin)
-        testImplementation(mockWebserver)
-        testImplementation(coroutines)
-        testImplementation(coroutines.turbine)
-    }
-
+    testImplementation(libs.test.androidx.core)
+    testImplementation(libs.test.androidx.runner)
+    testImplementation(libs.test.junit)
+    testImplementation(libs.test.junit5)
+    testImplementation(libs.test.junit5.engine)
+    testImplementation(libs.test.mockito.kotlin)
+    testImplementation(libs.test.mockWebserver)
+    testImplementation(libs.test.coroutines)
+    testImplementation(libs.test.coroutines.turbine)
 }
 
 //fun getApiKey(property: String): String {

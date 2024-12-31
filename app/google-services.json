@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:625440903449:android:546f5448954bd5abf6b588",
+        "mobilesdk_app_id": "1:625440903449:android:497d736c601220fbf6b588",
         "android_client_info": {
-          "package_name": "com.season.winter.catchbottle"
+          "package_name": "dev.love.winter.catchbottle"
         }
       },
       "oauth_client": [

@@ -1,4 +1,4 @@
-package com.season.winter.catchbottle
+package dev.love.winter.catchbottle
 
 import org.junit.Test
 
