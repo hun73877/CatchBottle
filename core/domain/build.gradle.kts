@@ -57,7 +57,7 @@ dependencies {
     implementation(libs.androidx.appCompat)
     implementation(libs.androidx.core)
 
-    ksp(libs.androidx.hilt.android.compiler)
+    ksp(libs.androidx.hilt.androidCompiler)
     implementation(libs.androidx.hilt.android)
 
     implementation(libs.androidx.room)

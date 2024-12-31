@@ -1,0 +1,1 @@
+build variant 가 release 일 때 참조하는 디렉토리 입니다.

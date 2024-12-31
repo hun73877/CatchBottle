@@ -80,10 +80,10 @@ dependencies {
     implementation(libs.compose.keyboardState)
 
     implementation(libs.androidx.lifecycleRuntimeCompose)
-    implementation(libs.androidx.hilt.navigation.compose)
-    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.hilt.composeNavigation)
+    implementation(libs.androidx.hilt.composeNavigation)
     debugRuntimeOnly(libs.compose.uiTooling)
 
     implementation(libs.androidx.hilt.android)
-    ksp(libs.androidx.hilt.android.compiler)
+    ksp(libs.androidx.hilt.androidCompiler)
 }

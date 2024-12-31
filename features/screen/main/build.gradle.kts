@@ -74,7 +74,7 @@ dependencies {
     implementation(libs.androidx.fragment)
 
     implementation(libs.androidx.hilt.android)
-    ksp(libs.androidx.hilt.android.compiler)
+    ksp(libs.androidx.hilt.androidCompiler)
 
     implementation(libs.compose.activity)
     implementation(libs.compose.ui)
@@ -85,5 +85,5 @@ dependencies {
     implementation(libs.compose.runtime)
     implementation(libs.compose.uiToolingPreview)
     implementation(libs.androidx.lifecycleRuntimeCompose)
-    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.hilt.composeNavigation)
 }
