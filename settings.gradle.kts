@@ -1,8 +1,11 @@
+@file:Suppress("UnstableApiUsage", "UNCHECKED_CAST")
+
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
-        gradlePluginPortal()
     }
 }
 dependencyResolutionManagement {

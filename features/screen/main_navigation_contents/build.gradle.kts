@@ -72,7 +72,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
 
     implementation(libs.androidx.hilt.android)
-    ksp(libs.androidx.hilt.android.compiler)
+    ksp(libs.androidx.hilt.androidCompiler)
 
     annotationProcessor(libs.glideAnnotationProcessor)
     implementation(libs.glide)
