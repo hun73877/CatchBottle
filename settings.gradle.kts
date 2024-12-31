@@ -17,7 +17,7 @@ dependencyResolutionManagement {
 }
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-rootProject.name = "catchbottle"
+rootProject.name = "CatchBottle"
 
 include (":app")
 
